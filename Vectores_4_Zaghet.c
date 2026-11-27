@@ -14,7 +14,6 @@ void comparar(int v1[], int v2[]){
         }
     }
 }
-
 int main() 
 {
     printf("Ingrese 5 numeros del vector 1:\n");
