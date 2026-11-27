@@ -1,32 +1,32 @@
 #include <stdio.h>
-
-int main()
-{
     int vector1[5];
     int vector2[5];
     int j;
-    printf("Ingrese los 5 numeros del vector 1:\n");
+void comparar(int v1[], int v2[]){
+    printf("Comparacion posicion por posicion:\n");
+    for(j=0;j<5;j++){
+        if(v1[j]>v2[j]){
+            printf("Posicion %d:es mayor el vector 1 (%d>%d)\n", j + 1, v1[j], v2[j]);
+        } else if (v2[j]>v1[j]){
+            printf("Posicion %d:es mayor el vector 2 (%d>%d)\n", j + 1, v2[j], v1[j]);
+        } else {
+            printf("Posicion %d:son iguales (%d)\n", j + 1, v1[j]);
+        }
+    }
+}
+
+int main() 
+{
+    printf("Ingrese 5 numeros del vector 1:\n");
     for(j=0;j<5;j++){
         printf("Dato %d:", j + 1);
         scanf("%d", &vector1[j]);
     }
-    printf("Ingrese los 5 numeros del vector 2:\n");
+    printf("Ingrese 5 numeros del vector 2:\n");
     for(j=0;j<5;j++){
         printf("Dato %d:", j + 1);
         scanf("%d", &vector2[j]);
     }
-    printf("Comparacion posicion por posicion:\n");
-    for(j=0;j<5;j++){
-        if(vector1[j]>vector2[j]){
-            printf("Posicion %d:El vector 1 es mayor(%d>%d)\n", j, vector1[j], vector2[j]);
-        }
-        else if(vector1[j]<vector2[j]){
-            printf("Posicion %d:El vector 2 es mayor(%d>%d)\n", j, vector2[j], vector1[j]);
-        }
-        else{
-            printf("Posicion %d:Son iguales(%d)\n",
-                   j, vector1[j]);
-        }
-    }
+    comparar(vector1, vector2);
     return 0;
 }
